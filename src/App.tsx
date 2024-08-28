@@ -24,6 +24,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import { useSelector } from 'react-redux';
 
 type SectionProps = PropsWithChildren<{
   title: string;
@@ -57,11 +58,10 @@ function Section({children, title}: SectionProps): React.JSX.Element {
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
-
+  const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn)
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -76,9 +76,12 @@ function App(): React.JSX.Element {
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
+          <Section title= "Are you Logged In">
+            {isLoggedIn ? <Text>Oui .. Bienvenue </Text> : <Text> NO ! Wait for our genius to implement login</Text>}
+          </Section>
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
+            screen and then come back to see your edit...
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
