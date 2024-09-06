@@ -1,4 +1,21 @@
+<br>
+
+# Before You start
+
+### This is an extension of react-native boilerplate
+
+#### This gives an out of the box application with capability to run a saga based application in native
+>#### Features added : <br><br>Redux toolkit,<br> Saga,<br> React Native Navigation<br><br>
+
+
+
+
+<br><br><hr><br><br>
+
+# Original Readme from React ->
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+<br>
 
 # Getting Started
 
