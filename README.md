@@ -5,7 +5,23 @@
 ### This is an extension of react-native boilerplate
 
 #### This gives an out of the box application with capability to run a saga based application in native
->#### Features added : <br><br>Redux toolkit,<br> Saga,<br> React Native Navigation<br><br>
+>#### Features added : <br><br>Redux toolkit,<br> Saga,<br> React Native Navigation<br>React Native Debugger <br><br>
+
+### Troubleshoot : 
+
+```bash
+# if you are unable to start debug in android
+# in a parallel terminal
+# execute
+
+npm run debug
+
+# Post this, you will need to select debug
+# from the virtual/real app
+
+# Happy Debugging !!
+
+```
 
 
 
