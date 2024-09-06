@@ -1,7 +1,7 @@
 
 import { Provider } from 'react-redux';
-import App from './App';
 import store from './store';
+import AppNavigationWrapper from './AppNavigationWrapper';
 
 interface AppProps {
 
@@ -11,7 +11,7 @@ const AppWrapper: React.FC<AppProps> = (props: AppProps) => {
     return (
         <>
             <Provider store={store}>
-                <App />
+                <AppNavigationWrapper />
             </Provider>
         </>
     )

@@ -25,40 +25,17 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import { useSelector } from 'react-redux';
+import { Section } from './components/Common/section';
 
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
 
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): React.JSX.Element {
+function App({ navigation }): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   const isLoggedIn = useSelector((state: any) => state.auth.isLoggedIn)
+
+  if(!isLoggedIn) {
+    navigation.navigate('NoLogin')
+  }
+
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
@@ -81,7 +58,7 @@ function App(): React.JSX.Element {
           </Section>
           <Section title="Step One">
             Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edit...
+            screen and then come back to see your edit...!
           </Section>
           <Section title="See Your Changes">
             <ReloadInstructions />
