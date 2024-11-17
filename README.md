@@ -1,13 +1,50 @@
 <br>
-
-# Before You start 
+ 
+# Before You start
 
 ### This is an extension of react-native boilerplate
 
 #### This gives an out of the box application with capability to run a saga based application in native
 >#### Features added : <br><br>Redux toolkit,<br> Saga,<br> React Native Navigation<br>React Native Debugger <br><br>
 
-### Troubleshoot : 
+## Troubleshoot : 
+
+### In case you are unable to correctly work with gradle
+
+- First try the script as mentioned below.
+
+### If you are still facing errors :
+
+- Clean gradle cache and wrapper
+- Clean local gradle build
+- Delete local gradle build folders
+- Sometimes using a VPN might fix and TAG and SSL error
+
+### If any fix is required for gradle, do raise a PR and update this repo
+
+```bash
+# if you are unable to run in android
+# and you are getting errors in build
+
+#execute
+
+cd android
+# you can break this into two different steps if it goes into error
+# use info and debug params to investigate further
+gradlew clean assembleDebug
+
+#uninstall the app from virtual device
+# navigate back to root
+cd..
+npm run android
+
+# this should fix the issues.
+# you can close the aforementioned script and run
+
+npm start
+
+# npm start has better debugger scripts
+```
 
 ```bash
 # if you are unable to start debug in android
