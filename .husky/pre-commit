@@ -1,0 +1,16 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Get the current branch name
+BRANCH=$(git symbolic-ref --short HEAD)
+
+# List branches where direct commits are forbidden
+PROTECTED_BRANCHES="main develop"
+
+# Check if the current branch is in the list
+if echo "$PROTECTED_BRANCHES" | grep -qw "$BRANCH"; then
+  echo "❌ Direct commits to the '$BRANCH' branch are not allowed. Please create a new branch and commit there!"
+  exit 1
+fi
+
+# Allow commits on other branches
